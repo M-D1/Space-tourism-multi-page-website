@@ -1,0 +1,750 @@
+:root{
+  --very-dark-blue:#0B0D17;
+  --white:#fff;
+  --grayish-blue:#D0D6F9;
+  --dark-gray:#616476;
+}
+
+body{
+ 
+ 
+  color: var(--white);
+  font-family: 'Barlow Condensed', sans-serif;
+  /* font-family: 'Bellefair', serif; */
+  
+  
+  
+  margin: 0;
+  max-width: 1400px;
+}
+
+/* NAVBAR */
+header{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+}
+ul{
+  list-style: none;
+  display:  flex;
+  gap: 1em;
+  background: hsla(0, 0%, 100%,0.1);
+  backdrop-filter: blur(1rem);
+  margin: 0;
+  padding: 2em 10em;
+
+  
+}
+
+
+span{
+  font-weight: 700;
+}
+
+
+
+.nav--link{
+  
+
+  font-size: 1em;
+  
+  letter-spacing: 2.7px;
+  color: var(--white);
+  text-decoration: none;
+  position: relative;
+  
+}
+
+.nav--link::after{
+  content: '';
+  position: absolute;
+  height: 3px;
+  background-color: var(--white);
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: all 0.6s;
+}
+.nav--link:hover::after{
+  width: 100%;
+  opacity: .5;
+}
+.nav--link.active::after{
+  width: 100%;
+}
+
+.bars{
+  position: relative;
+  color: var(--white);
+  display: none;
+  width: 20px;
+  height: 14px;
+  z-index: 1;
+}
+.bars span{
+  background-color: var(--white);
+  height: 3px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition:  all 0.3s ease;
+}
+.bars span:first-child{
+  top: 0px;
+}
+.bars span:nth-child(2){
+  top: 6px;
+}
+
+.bars span:last-child{
+  top: 12px;
+}
+.bars.active span:nth-child(2){
+  opacity: 0;
+}
+.bars.active span:first-child,
+.bars.active span:last-child{
+  top: 6px;
+}
+
+@media (max-width:623px) {
+  ul{
+    flex-direction: column;
+    position: fixed;
+    inset: 0 0 0 30%;
+    padding: 7em 1.5em;
+    left: 100%;
+    transition: .6s;
+    z-index: 1;
+
+  }
+
+  .bars{
+    display: block;
+    z-index: 2;
+  }
+
+
+
+   
+  
+
+}
+
+
+
+
+/* home page */
+
+.home--page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('./assets/home/background-home-mobile.jpg') no-repeat center/cover;
+  height: calc(100vh + 1px);
+  padding-top: 5em;
+}
+
+
+.home--page .flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.home--page .space{
+  font-family: 'Bellefair';
+  margin: .2em 0;
+  font-weight: 400;
+  font-size: 5rem;
+  text-transform: uppercase;
+}
+.home--page .travel{
+  order: -1;
+ 
+  font-size: 1rem; 
+  color: var(--grayish-blue);
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  
+}
+.home--page .desc{
+    font-family: 'Barlow';
+   
+    font-size: 0.9375rem;
+    line-height: 25px;
+    color: var(--grayish-blue);
+    margin-top: 0;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 5.4em;
+}
+.home--page .explore-container{
+  background-color: var(--white);
+  float:left;
+  shape-outside: circle();
+  clip-path: circle();
+  width: 348px;
+  height: 174px;
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  margin-bottom: 2em;
+ 
+}
+
+
+.home--page .explore{
+  font-family: 'Bellefair';
+  font-size: 1.125rem;
+  text-align: center;
+  letter-spacing: 1.25px;
+  color: var(--very-dark-blue);
+  text-transform: uppercase;
+    
+    
+}
+/* destination page */
+.planet{
+  width: 100%;
+}
+.destination--page--container{
+  background: url('./assets/destination/background-destination-mobile.jpg') no-repeat center/cover;
+}
+.destination--page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+   
+  text-align: center;
+ 
+
+  padding-top: 5em;
+}
+.pick-destination{
+
+
+  font-weight: 400;
+  font-size: 1rem;
+
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2em;
+  margin-top: 0;
+  padding-top:5em ;
+  margin-bottom: -2em;
+}
+.pick-destination-span{
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+
+    letter-spacing: 2.7px;
+  
+    
+    opacity: 0.25;
+}
+.link{
+  margin-top: 1.625em;
+  margin-bottom: 1.25em;
+}
+.link p{
+  display: inline;
+  margin-left: 1em;
+
+    font-style: normal;
+  
+    font-size: 0.875rem;
+   
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 2.3625px;
+    color: var(--grayish-blue);
+}
+.link p.active{
+    border-bottom: 2px solid white;
+    padding: 3px;
+    color: var(--white);
+    
+}
+.planet .name{
+  font-family: 'Bellefair';
+    
+  font-weight: 400;
+  font-size: 3.5rem;
+  line-height: 64px;
+ 
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.planet .desc{
+  font-family: 'Barlow';
+
+  font-size: 0.9375rem;
+  line-height: 25px;
+  color: var(--grayish-blue);
+  margin-top: 0.067em;
+  margin-bottom: 2.13em;
+  
+    
+}
+.hr{
+  border: 1px solid var(--grayish-blue);
+  opacity: .2;
+  margin: 0;
+}
+.distance{
+  margin-top: 2em;
+}
+.time{
+  margin-top: 2em;
+}
+.distance .title,
+.time .title{
+ 
+  font-size: 0.875rem;
+  color: var(--grayish-blue);
+  letter-spacing: 2.3625px;
+  text-transform: uppercase;
+  margin-bottom: .86em;
+}
+.distance .info,
+.time .info{
+  font-family: 'Bellefair';
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+
+/* crew page */
+
+.meet-your-crew{
+
+ 
+  font-weight: 400;
+  font-size: 1rem;
+  
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 6em;
+  margin-bottom: 2em;
+}
+.meet-your-crew-span{
+  opacity: .5;
+  margin-right: .4em;
+}
+
+.crew--page--container{
+  background: url('./assets/crew/background-crew-mobile.jpg') no-repeat center/cover;
+
+}
+.crew--page{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  
+ 
+}
+
+
+.crew--page .img--container{
+  order: -1;
+}
+
+.crew--page .role{
+  font-family: 'Bellefair';
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: .5;
+  margin-top: -2em;
+  margin-bottom: 0;
+}
+
+.crew--page .name{
+  font-family: 'Bellefair';
+  
+  font-weight: 400;
+  font-size: 1.5rem;
+ 
+  text-transform: uppercase;
+  margin-top: 0.375em;
+  margin-bottom: 0;
+}
+.crew--page .bio{
+  font-family: 'Barlow';
+ 
+
+  font-size: 0.9375rem;
+  line-height: 25px;
+  color: var(--grayish-blue);
+  
+  
+}
+
+.crew--page .person{
+  width: 50%;
+}
+.crew--page .hr{
+  margin-top: -.3em;
+}
+.crew--page .content{
+  display: flex;
+  flex-direction: column;
+}
+.bullets--container{
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  order: -1;
+  margin-top: -1em;
+  
+}
+.bullets{
+  font-size: 40px;
+  opacity: .4;
+  cursor: pointer;
+}
+.bullets.active{
+  opacity: 1;
+}
+/* technology page */
+.technology--page--container{
+    background: url('./assets/technology/background-technology-mobile.jpg') no-repeat center/cover;
+      min-height: 100vh;
+      padding-top: 5em;
+}
+.technology--page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;
+
+}
+.technology--page--container .space--launch{
+  
+  
+  font-weight: 400;
+  font-size: 1rem;
+  
+  letter-spacing: 2.7px;
+  text-transform: uppercase;
+  padding-top: 5em;
+  margin-bottom: 2em;
+  margin-top: 0;
+  text-align: center;
+}
+.technology--page--container .space--launch--span{
+  opacity: .25;
+  margin-right: 1em;
+}
+.technology--page .navigation{
+  display: flex;
+  gap: 1em;
+  margin-top: 2em;
+  cursor: pointer;
+}
+.technology--page .navigation p{
+    font-size: 1rem;
+    border-radius: 50px;
+    
+    padding: .68em 1em;
+    border: 1px solid rgb(175 169 169 / 50%);
+}
+.technology--page .navigation p.active{
+  background-color: var(--white); 
+  color: var(--very-dark-blue);
+}
+.technology--page .img--container img{
+  width: 100%;
+}
+.technology--page .content{
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.technology--page .content .terminology{
+  
+    
+    font-weight: 400;
+    font-size: 0.875rem;
+    
+    letter-spacing: 2.3625px;
+    color: var(--grayish-blue);
+    text-transform: uppercase;
+    margin-bottom: 0.5625em;
+    
+}
+.technology--page .content .title{
+  font-family: 'Bellefair';
+  font-weight: 400;
+  font-size: 1.5rem;  
+  text-transform: uppercase;
+  margin-top:0;
+  margin-bottom:.66em;
+}
+.technology--page .content .desc{
+  font-family: 'Barlow';
+  
+  font-size: 0.9375rem;
+  line-height: 25px;
+  color: var(--grayish-blue);
+  margin-top: 0;
+}
+/* tablets */
+
+@media(min-width:623px){
+ 
+  .home--page{
+    background-image: url('./assets/home/background-home-tablet.jpg');
+  }
+  .destination--page--container{
+    background-image: url('./assets/destination/background-destination-tablet.jpg');
+  }
+  .crew--page--container{
+    background-image: url('./assets/crew/background-crew-tablet.jpg');
+  }
+  .technology--page{
+    background-image: url('./assets/technology/background-technology-tablet.jpg');
+  }
+  ul{
+    padding: 2em 3em;
+  }
+  .home--page .space{
+    font-size:9.375rem ;
+  }
+  .home--page .travel{
+    
+    font-size: 1.25rem;
+   
+  }
+  .home--page .desc{
+    width: 66%;
+  }
+  .pick-destination{
+    text-align: left;
+    margin-left: 2em;
+    font-size: 1.25rem;
+  }
+  .destination--page .planet--img{
+    width: 60%;
+  }
+  .dis--time--container {
+    display: flex;
+    justify-content: space-around;
+  }
+  .meet-your-crew{
+    text-align: left;
+    font-size: 1.25rem;
+    margin-left: 1em;
+  }
+  .crew--page .role{
+    font-size: 1.5rem;
+    margin-top: 2.5em;
+  }
+  .crew--page .name{
+    font-size: 2.5rem;
+  }
+  .crew--page .bio{
+    font-size: 1rem;
+    width: 78%;
+    margin: 0 auto;
+  }
+  .bullets--container{
+    order: 1;
+  }
+  .crew--page .img--container{
+    order: 1;
+    
+  }
+  .crew--page .person{
+    width: 70%;
+    
+  }
+  .crew--page .hr{
+    display: none;
+  }
+
+  .technology--page--container .space--launch{
+    font-size:1.75rem;
+    text-align: left;
+    margin-left: 2em;
+  }
+  .technology--page .navigation p {
+    font-size: 1.5rem;
+  }
+
+  .technology--page .content .terminology{
+    font-size: 1rem;
+  }
+  .technology--page .content .title{
+    font-size: 2.5rem;
+  }
+
+  .technology--page .content .desc{
+    font-size: 1rem;
+  }
+
+}
+@media(min-width:797px) {
+  .home--page {
+    background-image: url('./assets/home/background-home-desktop.jpg');
+  }
+  .destination--page--container{
+    background-image: url('./assets/destination/background-destination-desktop.jpg');
+  }
+  .crew--page--container{
+    background-image: url('./assets/crew/background-crew-desktop.jpg');
+  }
+  .technology--page{
+    background-image: url('./assets/technology/background-technology-desktop.jpg');
+    flex-direction: row;
+    text-align: left;
+  }
+  ul {
+    padding-right: 4em;
+    padding-left: 4em;
+  }
+  .home--page{
+    flex-direction: row;
+    min-height: 100vh;
+    padding: 0 5em;
+  }
+  .home--page .flex{
+    align-items: stretch;
+  }
+  .home--page .space{
+    margin: .4em 0; 
+  }
+  .home--page .explore-container{
+    margin-top: 18em;
+    
+      width: 444px;
+      height: 216px;
+  }
+  .home--page .travel{
+    padding-top:6em;
+  }
+  .home--page .desc{
+    text-align: left;
+    width: 45%;
+    margin-bottom: 0em;
+  }
+  .home--page .explore{
+    font-size: 1.75rem;
+  }
+  .pick-destination{
+    text-align: left;
+    margin-left: 2em;
+  }
+  .pick-destination,.pick-destination-span{
+    font-size: 1.75rem;
+
+  }
+  .link{
+    margin-bottom: 2.3125em;
+  }
+  .link p{
+    font-size: 1em;
+  }
+
+  .destination--page{
+    flex-direction: row;
+    text-align: left;
+    justify-content: center;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .planet{
+    width: 40%;
+  }
+  .dis--time--container{
+    display: flex;
+    gap: 1em;
+  }
+  .planet .name{
+    font-size: 6.25rem;
+    margin-bottom: .875em;
+  }
+  .planet .desc{
+    font-size: 1.125rem;
+  }
+  .destination--page .planet--img{
+    width: 90%;
+  }
+
+  .crew--page{
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    padding: 3em;
+  }
+  .meet-your-crew {
+    font-size: 1.75rem;
+  }
+  .crew--page .bio{
+    margin: 0;
+  }
+  .crew--page .person{
+    width: auto;
+    margin-bottom: -3em;
+  }
+
+  .technology--page .content .title{
+    margin-bottom: .303em;
+  }
+  .technology--page .navigation{
+    flex-direction: column;
+    margin-left: 4em;
+    margin-right: 2em;
+  }
+  .technology--page .navigation p{
+    font-size: 2rem;
+  }
+  .technology--page .img--container{
+    order: 3;
+  }
+  .technology--page .content{
+    width: 90%;
+  }
+  .technology--page .content .title{
+    font-size: 3.5rem;
+  }
+  .technology--page .content .desc{
+    font-size: 1.125rem;
+  }
+
+  
+
+}
+
+@media (min-width:853px) {
+  ul{
+    padding-left: 9em;
+    padding-right: 9em;
+  }
+ 
+}
+@media (min-width:1020px){
+  .technology--page .img--container img {
+      width: auto;
+    }
+}
