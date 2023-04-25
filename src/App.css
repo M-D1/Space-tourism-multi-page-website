@@ -127,6 +127,9 @@ span{
     z-index: 1;
 
   }
+  nav{
+    padding: 1em;
+  }
 
   .bars{
     display: block;
@@ -512,6 +515,9 @@ span{
 /* tablets */
 
 @media(min-width:623px){
+  .logo{
+    margin-left: 1em;
+  }
  
   .home--page{
     background-image: url('./assets/home/background-home-tablet.jpg');

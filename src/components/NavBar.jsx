@@ -22,7 +22,7 @@ export default function NavBar() {
     <nav>
     
       <Link>
-        <img src={logo} alt="" />
+        <img src={logo} alt="" className="logo" />
       </Link>
       <div onClick={handleClick} className={`bars ${active ? 'active':''}` }>
           <span></span>

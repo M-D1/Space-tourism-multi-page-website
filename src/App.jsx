@@ -4,14 +4,14 @@ import Home from './pages/Home'
 import NavBar from './components/NavBar'
 import Destination from './pages/Destination'
 import Crew from './pages/Crew'
-import Technology from './pages/technology'
-import DetinationDetails from './pages/DestinationDetails'
+import Technology from './pages/Technology'
+
 
 
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <Router>
@@ -22,7 +22,7 @@ function App() {
           <Route path='destination' element={<Destination />} />
               
         
-           <Route path='destination/mars' element={<DetinationDetails />} />
+           
          
           <Route path='crew' element={<Crew />} />
           <Route path='technology' element={<Technology />} />
