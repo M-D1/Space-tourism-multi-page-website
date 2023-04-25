@@ -1,10 +1,10 @@
 
-import { useState,useRef } from 'react'
-import img from '../assets/technology/image-space-capsule-landscape.jpg'
-import data from '../index'
-import { useEffect } from 'react'
+import { useState,useRef, useEffect } from 'react'
 
-console.log(data[0].technology)
+import data from '../index'
+
+
+
 
 export default function Technology(){
  const [techNum,setTechNum] = useState(0)

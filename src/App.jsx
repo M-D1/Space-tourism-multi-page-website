@@ -1,4 +1,4 @@
-import { useState } from 'react'
+
 import { BrowserRouter as Router ,Routes,Route } from 'react-router-dom'
 import Home from './pages/Home'
 import NavBar from './components/NavBar'
@@ -20,10 +20,6 @@ function App() {
         <Route path='/' element={<NavBar />} >
           <Route index  element={<Home />} />
           <Route path='destination' element={<Destination />} />
-              
-        
-           
-         
           <Route path='crew' element={<Crew />} />
           <Route path='technology' element={<Technology />} />
         </Route>

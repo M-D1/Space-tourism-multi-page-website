@@ -1,6 +1,6 @@
 
-import { NavLink, Outlet } from 'react-router-dom'
-import moon from '../assets/destination/image-moon.webp'
+
+
 
 import data from '../index.js'
 import { useRef, useState } from 'react'
@@ -75,32 +75,9 @@ export default function Destination(){
  
  )
  return(
-  <>
-   
-     
+  <>   
    {elements}
-   {/* <nav>
-    <ul>
-     <li>
-        <NavLink>Moon</NavLink>
-     </li>
-     <li>
-       <NavLink>Mars</NavLink>
-     </li>
 
-     <li>
-      <NavLink>Europa</NavLink>
-     </li>
-
-     <li>
-        <NavLink>Titan</NavLink>
-     </li>
-    </ul>
-   
-  
- 
-   </nav> */}
-   <Outlet />
   </>
  )
 }

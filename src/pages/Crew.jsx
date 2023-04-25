@@ -50,16 +50,8 @@ export default function Crew(){
 
   ))
  return(
-  <>
-  
-  
+  <>  
     {elements}
-   
- 
- 
-      
-
-  
   </>
  )
 }
