@@ -21,7 +21,7 @@ export default function NavBar() {
 <header>
     <nav>
     
-      <Link>
+      <Link className="logo--link">
         <img src={logo} alt="" className="logo" />
       </Link>
       <div onClick={handleClick} className={`bars ${active ? 'active':''}` }>
